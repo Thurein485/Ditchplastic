@@ -1,519 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ditch Plastics - Solutions</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <style>
-            body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: #f0f2f5;
-            color: #222;
-        }
-
-        header {
-            background: #fff;
-            border-bottom: 1px solid #ccc;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            z-index: 1000;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10px;
-            position: sticky;
-        }
-
-        .logo-icon img {
-            height: 40px;
-            width: 40px;
-            margin-left: 20px;
-        }
-
-        #menu-checkbox {
-            display: none;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 28px;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-
-        nav {
-            display: inline-block;
-            margin-right: 30px;
-        }
-
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-
-        main {
-            padding-top: 100px;
-        }
-
-        /* Mobile Styles */
-        @media screen and (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-                color: #333;
-            }
-
-            nav {
-                position: fixed;
-                top: 60px;
-                left: -100%;
-                width: 100%;
-                background-color: white;
-                transition: left 0.3s ease;
-                display: flex;
-                flex-direction: column;
-                z-index: 999;
-            }
-
-            nav a {
-                padding: 15px;
-                border-bottom: 1px solid #eee;
-                text-align: left;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            #menu-checkbox:checked ~ nav {
-                left: 0;
-            }
-        }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ditch Plastics - Solutions</title>
+        <link rel="stylesheet" href="/Home/nav.css">
+    <style>/* --- Reset and Base Styles --- */
+* {
+    box-sizing: border-box;
+}
 
 body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #e9f5e1;
-      color: #2d4821;
-    }
-    h2 {
-      color: #4CAF50;
-      font-size: 26px;
-    }
-    p {
-      line-height: 1.8;
-      font-size: 18px;
-    }
-    img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
+    font-family: 'Open Sans', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.7;
+}
 
-                  /* --- General Styles --- */
-        body {
-            font-family: 'Open Sans', sans-serif; 
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa; 
-            color: #343a40; 
-            line-height: 1.7;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+section {
+    padding: 40px 20px;
+}
 
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
+/* --- Buttons --- */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        .button.primary {
-            background-color: #28a745; 
-            color: #fff;
-        }
+.button.primary {
+    background-color: #28a745;
+    color: #fff;
+}
 
-        .button.primary:hover {
-            background-color: #1e7e34;
-        }
+.button.primary:hover {
+    background-color: #1e7e34;
+}
 
-        .button.secondary {
-            background-color: #f8f9fa;
-            border: 1px solid #343a40;
-        }
+.button.secondary {
+    background-color: #f8f9fa;
+    border: 1px solid #343a40;
+}
 
-        .button.secondary:hover {
-            background-color: #e2e6ea;
-        }
+.button.secondary:hover {
+    background-color: #e2e6ea;
+}
 
-        .button.large {
-            padding: 18px 35px;
-            font-size: 1.1em;
-        }
+.button.large {
+    padding: 18px 35px;
+    font-size: 1.1em;
+}
 
-        .button.small {
-            padding: 10px 20px;
-            font-size: 0.9em;
-        }
+.button.small {
+    padding: 10px 20px;
+    font-size: 0.9em;
+}
 
-        .learn-more {
-            display: inline-block;
-            margin-top: 15px;
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+.learn-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        .learn-more:hover {
-            color: #0056b3;
-            text-decoration: underline;
-        }
-        /* --- Footer --- */
-        footer {
-            background-color: #343a40; 
-            color: #fff; 
-            padding: 50px 0;
-            font-size: 0.9em;
-        }
+.learn-more:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
 
-        footer .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+/* --- Info Section --- */
+.section-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #2e8b57;
+}
 
-        .footer-links {
-            display: flex; 
-            justify-content: space-between; 
-            width: 100%; 
-            margin-bottom: 20px;
-        }
+.info-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 25px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-        .footer-column {
-            flex: 1; 
-            margin-right: 20px;
-        }
+.info-text {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px;
+}
 
-        .footer-column:last-child {
-            margin-right: 0; 
-        }
+.info-photo {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+}
 
-        .footer-links h3 {
-            font-size: 1.1em;
-            color: #fff;
-            margin-bottom: 15px;
-        }
+.info-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+/* --- Box Container --- */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
-        .footer-links li {
-            margin-bottom: 8px;
-        }
+.box {
+    background-color: white;
+    width: 220px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
 
-        .footer-links li a {
-            color: #fff; 
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+.box:hover {
+    transform: scale(1.05);
+}
 
-        .footer-links li a:hover {
-            color: #f8f9fa; 
-        }
+.box h3 {
+    color: #2e8b57;
+    margin-bottom: 10px;
+}
 
-        .footer-bottom {
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1); 
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            font-size: 0.85em; 
-        }
+.slogan {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #444;
+}
 
-        .footer-bottom p {
-            margin-bottom: 10px; 
-            opacity: 0.8;
-        }
+.read-more {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        .social-icons {
-            display: flex; 
-            align-items: center;
-            margin-bottom: 15px; 
-        }
+.read-more:hover {
+    background-color: #246b44;
+}
 
-        .logo-icon img {
-          height: 50px;
-          width: 80px;
-        }
+/* --- Accordion --- */
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
 
-        .social-icons a {
-            color: #fff; 
-            font-size: 1.3em; 
-            margin-left: 10px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+.accordion-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 12px;
+}
 
-        .social-icons a:first-child {
-            margin-left: 0;
-        }
+.accordion-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2e8b57;
+    background-color: #eafaf1;
+}
 
-        .social-icons a:hover {
-            color: #f8f9fa;
-        }
+.accordion-body {
+    display: none;
+    padding: 15px 20px;
+    background-color: #f5f5f5;
+}
+
+.arrow {
+    font-size: 18px;
+}
 
 
-        /* --- Newsletter Form in Footer --- */
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-        }
+/* --- Newsletter --- */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+}
 
-        .newsletter-form p {
-            color: #fff;
-            margin-bottom: 10px;
-        }
+.newsletter-form p {
+    color: #fff;
+    margin-bottom: 10px;
+}
 
-        .newsletter-form input[type="email"] {
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            color: #343a40;
-            margin-bottom: 10px; 
-        }
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: #343a40;
+    margin-bottom: 10px;
+}
 
-        .newsletter-form button {
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.newsletter-form button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .newsletter-form button:hover {
-            background-color: #1e7e34;
-        }
+.newsletter-form button:hover {
+    background-color: #1e7e34;
+}
 
-        /* --- Media Queries for Footer --- */
-        @media (max-width: 768px) {
-            .footer-links {
-                flex-direction: column; 
-                margin-bottom: 20px;
-            }
+/* --- Navigation Responsive --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    font-size: 1.8rem;
+    border: none;
+    cursor: pointer;
+    color: #28a745;
+}
 
-            .footer-column {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .social-icons {
-                margin-bottom: 10px;
-            }
-        }
-
-            /* Hide menu toggle button on larger screens */
-    .menu-toggle {
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
         display: none;
-        background: none;
-        font-size: 1.8rem;
-        border: none;
-        cursor: pointer;
-        color: #28a745;
+        padding: 20px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    /* Small screens (mobile) */
-    @media (max-width: 768px) {
-        nav ul {
-            flex-direction: column;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            display: none;
-            padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        nav ul.active {
-            display: flex;
-        }
-
-        nav li {
-            margin: 10px 0;
-            text-align: center;
-        }
-
-        .menu-toggle {
-            display: block;
-        }
+    nav ul.active {
+        display: flex;
     }
+
+    nav li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+}
+
     * {
-      box-sizing: border-box;
-    }
+        box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f0fdf4;
-      color: #333;
-    }
+        body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        background-color: #f0fdf4;
+        color: #333;
+        }
 
-    section {
-      padding: 40px 20px;
-    }
+        section {
+        padding: 40px 20px;
+        }
 
-    .section-title {
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 30px;
-      text-align: center;
-      color: #2e8b57;
-    }
+        .section-title {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: center;
+        color: #2e8b57;
+        }
 
-    .info-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 25px;
-      background-color: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+        .info-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 25px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
-    .info-text {
-      flex: 1;
-      min-width: 250px;
-      margin-right: 20px;
-    }
+        .info-text {
+        flex: 1;
+        min-width: 250px;
+        margin-right: 20px;
+        }
 
-    .info-photo {
-      width: 100px;
-      height: 100px;
-      overflow: hidden;
-      border-radius: 10px;
-    }
+        .info-photo {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 10px;
+        }
 
-    .info-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+        .info-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        }
 
-    .box-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+        .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        }
 
-    .box {
-      background-color: white;
-      width: 220px;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
+        .box {
+        background-color: white;
+        width: 220px;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+        }
 
-    .box:hover {
-      transform: scale(1.05);
-    }
+        .box:hover {
+        transform: scale(1.05);
+        }
 
-    .box h3 {
-      color: #2e8b57;
-      margin-bottom: 10px;
-    }
+        .box h3 {
+        color: #2e8b57;
+        margin-bottom: 10px;
+        }
 
-    .slogan {
-      font-style: italic;
-      margin-bottom: 15px;
-      color: #444;
-    }
+        .slogan {
+        font-style: italic;
+        margin-bottom: 15px;
+        color: #444;
+        }
 
-    .read-more {
-      background-color: #2e8b57;
-      color: white;
-      border: none;
-      padding: 10px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+        .read-more {
+        background-color: #2e8b57;
+        color: white;
+        border: none;
+        padding: 10px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
 
-    .read-more:hover {
-      background-color: #246b44;
-    }
+        .read-more:hover {
+        background-color: #246b44;
+        }
 
-    .accordion {
-      width: 100%;
-      max-width: 800px;
-      margin: auto;
-    }
+        .accordion {
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        }
 
-    .accordion-item {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
+        .accordion-item {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin-bottom: 12px;
+        overflow: hidden;
+        }
 
-    .accordion-header {
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      color: #2e8b57;
-      font-weight: bold;
-      background-color: #eafaf1;
-    }
+        .accordion-header {
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        color: #2e8b57;
+        font-weight: bold;
+        background-color: #eafaf1;
+        }
 
-    .accordion-body {
-      display: none;
-      padding: 15px 20px;
-      background-color: #f5f5f5;
-    }
+        .accordion-body {
+        display: none;
+        padding: 15px 20px;
+        background-color: #f5f5f5;
+        }
 
-    .arrow {
-      font-size: 18px;
+        .arrow {
+        font-size: 18px;
     }
-                  /* --- General Styles --- */
+         /* --- General Styles --- */
         body {
             font-family: 'Open Sans', sans-serif; 
             margin: 0;
@@ -658,10 +572,11 @@ body {
             margin-bottom: 15px; 
         }
 
-        .logo-icon img {
-          height: 50px;
-          width: 80px;
+        .header-logo-icon {
+            height: 66px; 
+            width: auto; 
         }
+
 
         .social-icons a {
             color: #fff; 
@@ -788,11 +703,11 @@ body {
         <input type="checkbox" id="menu-checkbox" />
         <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
         <nav id="main-nav">
-            <a href="/Home/index.html" class="active">Home</a>
+            <a href="/Home/index.html">Home</a>
             <a href="/About Us/About.html">About Us</a>
             <a href="/Swaps/Swaps.html">Swaps</a>
             <a href="/DIY/DIY.html">DIY</a>
-            <a href="/Soultion For Family/SFF.html">Solutions</a>
+            <a href="/Soultion For Family/SFF.html" class="active">Solutions</a>
             <a href="/Contact/Contact.html">Contact Us</a>
         </nav>
     </header>
@@ -873,53 +788,44 @@ body {
 </section>
 
 <section>
-  <div class="section-title">Your Question Are Already Answered</div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        Why is ditching plastic important for families? <span class="arrow">▼</span>
-      </div>
-      <div class="accordion-body">Plastic harms health and nature. Families can lead the way to a cleaner planet.</div>
+    <div class="section-title">Your Question Are Already Answered</div>
+    <div class="accordion">
+        <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            Why is ditching plastic important for families? <span class="arrow">▼</span>
+        </div>
+        <div class="accordion-body">Plastic harms health and nature. Families can lead the way to a cleaner planet.</div>
+        </div>
+
+        <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            Are plastic-free items expensive? <span class="arrow">▼</span>
+        </div>
+        <div class="accordion-body">Some cost more at first, but they save money over time and are better for Earth.</div>
+        </div>
+
+        <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            Can we find these items in local shops? <span class="arrow">▼</span>
+        </div>
+        <div class="accordion-body">Yes! Many local stores sell eco-friendly options now, especially markets.</div>
+        </div>
+
+        <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            What if family members forget their reusables? <span class="arrow">▼</span>
+        </div>
+        <div class="accordion-body">Keep spares in the car or bag. Make it a family habit together.</div>
+        </div>
+
+        <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            How do I teach my kids about plastic pollution? <span class="arrow">▼</span>
+        </div>
+        <div class="accordion-body">Use simple videos and let them help with eco-choices at home.</div>
+        </div>
     </div>
- 
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        Are plastic-free items expensive? <span class="arrow">▼</span>
-      </div>
-      <div class="accordion-body">Some cost more at first, but they save money over time and are better for Earth.</div>
-    </div>
- 
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        Can we find these items in local shops? <span class="arrow">▼</span>
-      </div>
-      <div class="accordion-body">Yes! Many local stores sell eco-friendly options now, especially markets.</div>
-    </div>
- 
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        What if family members forget their reusables? <span class="arrow">▼</span>
-      </div>
-      <div class="accordion-body">Keep spares in the car or bag. Make it a family habit together.</div>
-    </div>
- 
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        How do I teach my kids about plastic pollution? <span class="arrow">▼</span>
-      </div>
-      <div class="accordion-body">Use simple videos and let them help with eco-choices at home.</div>
-    </div>
-  </div>
 </section>
- 
-<script>
-  function toggleAccordion(header) {
-    const body = header.nextElementSibling;
-    const isOpen = body.style.display === "block";
-    body.style.display = isOpen ? "none" : "block";
-    header.querySelector(".arrow").textContent = isOpen ? "▼" : "▲";
-  }
-</script>
 
 <footer>
     <div class="container">
@@ -927,12 +833,12 @@ body {
             <div class="footer-column">
                 <h3>Navigate</h3>
                 <ul>
-              <li><a href="/Home/index.html">Home</a></li>
-              <li><a href="/About Us/About.html">About Us</a></li>
-              <li><a href="/Swaps/Swaps.html">Swaps</a></li>
-              <li><a href="/DIY/DIY.html">DIY</a></li>
-              <li><a href="/Soultion For Family/SFF.html">Solutions</a></li>
-              <li><a href="/Contact/Contact.html">Contact Us</a></li>
+            <li><a href="/Home/index.html">Home</a></li>
+            <li><a href="/About Us/About.html">About Us</a></li>
+            <li><a href="/Swaps/Swaps.html">Swaps</a></li>
+            <li><a href="/DIY/DIY.html">DIY</a></li>
+            <li><a href="/Soultion For Family/SFF.html" class="active">Solutions</a></li>
+            <li><a href="/Contact/Contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-column">

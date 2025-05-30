@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Ditch Plastics | Beeswax Wraps</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="/Home/nav.css">
     <style>
         body {
         font-family: Arial, sans-serif;
@@ -23,20 +23,12 @@
         }
 
         header {
-            background: #fff;
-            border-bottom: 1px solid #ccc;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            z-index: 1000;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10px;
-            position: sticky;
+        background-color: #fff;
+        padding: 20px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
         }
 
         header .container {
@@ -407,14 +399,14 @@
 
     <header>
         <a href="/Home/index.html" class="logo-icon">
-            <img src="/Home/images/Ditch Plastics Logo.png" alt="Logo">
+            <img src="Images/Ditch Plastics Logo.png" alt="Logo">
         </a>
         <input type="checkbox" id="menu-checkbox" />
         <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
         <nav id="main-nav">
-            <a href="/Home/index.html" class="active">Home</a>
+            <a href="/Home/index.html">Home</a>
             <a href="/About Us/About.html">About Us</a>
-            <a href="/Swaps/Swaps.html">Swaps</a>
+            <a href="/Swaps/Swaps.html" class="active">Swaps</a>
             <a href="/DIY/DIY.html">DIY</a>
             <a href="/Soultion For Family/SFF.html">Solutions</a>
             <a href="/Contact/Contact.html">Contact Us</a>

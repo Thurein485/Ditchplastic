@@ -3,97 +3,9 @@
     <head>
     <meta charset="UTF-8" />
     <title>Bye Bye Bottles</title>
+        <link rel="stylesheet" href="/Home/nav.css">
         <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
     <style>
-            body {
-                margin: 0;
-                font-family: 'Segoe UI', sans-serif;
-                background: #f0f2f5;
-                color: #222;
-            }
-
-            header {
-                background: #fff;
-                border-bottom: 1px solid #ccc;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                width: 100%;
-                z-index: 1000;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 0 10px;
-                position: sticky;
-            }
-
-            .logo-icon img {
-                height: 40px;
-                width: 40px;
-                margin-left: 20px;
-            }
-
-            #menu-checkbox {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: none;
-                font-size: 28px;
-                cursor: pointer;
-                margin-right: 20px;
-            }
-
-            nav {
-                display: inline-block;
-                margin-right: 30px;
-            }
-
-            nav a {
-                margin: 0 10px;
-                text-decoration: none;
-                color: #333;
-                font-weight: 500;
-            }
-
-            main {
-                padding-top: 100px;
-            }
-
-            /* Mobile Styles */
-            @media screen and (max-width: 768px) {
-                .menu-toggle {
-                    display: block;
-                    color: #333;
-                }
-
-                nav {
-                    position: fixed;
-                    top: 60px;
-                    left: -100%;
-                    width: 100%;
-                    background-color: white;
-                    transition: left 0.3s ease;
-                    display: flex;
-                    flex-direction: column;
-                    z-index: 999;
-                }
-
-                nav a {
-                    padding: 15px;
-                    border-bottom: 1px solid #eee;
-                    text-align: left;
-                    width: 100%;
-                    box-sizing: border-box;
-                }
-
-                #menu-checkbox:checked ~ nav {
-                    left: 0;
-                }
-            }
-
     body {
         font-family: 'Segoe UI', sans-serif;
         margin: 0;
@@ -259,9 +171,9 @@
                 margin-bottom: 15px; 
             }
 
-            .logo-icon img {
-            height: 50px;
-            width: 80px;
+            .header-logo-icon {
+                height: 66px; 
+                width: auto; 
             }
 
             .social-icons a {
@@ -383,17 +295,17 @@
     <body>
         <header>
             <a href="/Home/index.html" class="logo-icon">
-                <img src="/Home/images/Ditch Plastics Logo.png" alt="Logo">
+                <img src="Images/Ditch Plastics Logo.png" alt="Logo">
             </a>
             <input type="checkbox" id="menu-checkbox" />
             <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
             <nav id="main-nav">
-            <a href="/Home/index.html" class="active">Home</a>
-            <a href="/About Us/About.html">About Us</a>
-            <a href="/Swaps/Swaps.html">Swaps</a>
-            <a href="/DIY/DIY.html">DIY</a>
-            <a href="/Soultion For Family/SFF.html">Solutions</a>
-            <a href="/Contact/Contact.html">Contact Us</a>
+                <a href="/Home/index.html">Home</a>
+                <a href="/About Us/About.html">About Us</a>
+                <a href="/Swaps/Swaps.html">Swaps</a>
+                <a href="/DIY/DIY.html">DIY</a>
+                <a href="/Soultion For Family/SFF.html" class="active">Solutions</a>
+                <a href="/Contact/Contact.html">Contact Us</a>
             </nav>
         </header>
     <div class="container">
@@ -406,50 +318,50 @@
     </p>
     <img src="Images/bottles.jpg" alt="Reusable water bottles">
     </div>
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h3>Navigate</h3>
-            <ul>
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Navigate</h3>
+                <ul>
               <li><a href="/Home/index.html">Home</a></li>
               <li><a href="/About Us/About.html">About Us</a></li>
               <li><a href="/Swaps/Swaps.html">Swaps</a></li>
               <li><a href="/DIY/DIY.html">DIY</a></li>
               <li><a href="/Soultion For Family/SFF.html">Solutions</a></li>
               <li><a href="/Contact/Contact.html">Contact Us</a></li>
-            </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Get Involved</h3>
-                    <ul>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Get Involved</h3>
+                <ul>
                     <li><a href="/Contact/Contact.html">Become a Member</a></li>
                     <li><a href="/Contact/Contact.html">Support Us</a></li>
                     <li><a href="/Contact/Contact.html">Volunteer</a></li>
                     <li><a href="/Contact/Contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Stay Connected</h3>
-                    <p>Sign up for our newsletter to receive the latest updates and news.</p>
-                <form class="newsletter-form" onsubmit="handleSubscribe(event)">
-                <input type="email" placeholder="Your Email Address" required>
-                <button type="submit" class="button primary small" id="subscribe-button">Subscribe</button>
-                <div class="footer-bottom-inline">
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/yourtwitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.instagram.com/yourinsta" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:ditchingplastic@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </ul>
             </div>
-            <p>© 2025 Ditch Plastics. All rights reserved.</p>
+            <div class="footer-column">
+                <h3>Stay Connected</h3>
+                <p>Sign up for our newsletter to receive the latest updates and news.</p>
+            <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit" class="button primary small" id="subscribe-button">Subscribe</button>
+            <div class="footer-bottom-inline">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/yourtwitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/yourinsta" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:ditchingplastic@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
-    </form>
-                </div>
+        <p>© 2025 Ditch Plastics. All rights reserved.</p>
+    </div>
+</form>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
             <script>
         function handleSubscribe(event) {
             event.preventDefault(); // Stop form from reloading the page
